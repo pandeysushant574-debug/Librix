@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Librix — Sign In</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/forms.css">
+<link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/glass.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <script src="js/theme.js"></script>
+</head>
+<body>
+<div class="login-shell">
+  <div class="glass-panel login-card">
+    <div class="brand">
+      <span class="l1">L</span><span class="l2">i</span><span class="l3">b</span><span class="l4">r</span><span class="l5">i</span><span class="l6">x</span>
+    </div>
+    <div class="login-subtitle">Library Management System &middot; Q16 Improve Testing</div>
+    <form id="login-form">
+      <div class="field">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="e.g. admin" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" autocomplete="current-password" required>
+      </div>
+      <div id="login-error" class="login-error"></div>
+      <button type="submit" id="login-submit" class="btn btn-primary" style="width:100%; justify-content:center;">Sign In</button>
+    </form>
+    <div class="login-hint">
+      Default accounts &middot; each with its own password<br>
+      <b>admin</b> / Admin@123 &nbsp;&middot;&nbsp; <b>librarian</b> / Librarian@123 &nbsp;&middot;&nbsp; <b>assistant</b> / Assistant@123
+    </div>
+  </div>
+</div>
+<script src="js/transitions.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

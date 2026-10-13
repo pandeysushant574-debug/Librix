@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Librix -- Library Management System</title>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/glass.css" />
+<link rel="stylesheet" href="css/theme.css" />
+<script src="js/theme.js"></script>
+<script src="js/transitions.js"></script>
+<script src="js/api.js"></script>
+<script>
+  Api.get('/auth/me')
+    .then(() => { window.pageGo('dashboard.html'); })
+    .catch(() => { window.pageGo('login.html'); });
+</script>
+</head>
+<body>
+  <div class="login-shell"><div class="glass-panel" style="padding:28px 38px;font-weight:600;">Loading Librix...</div></div>
+</body>
+</html>
