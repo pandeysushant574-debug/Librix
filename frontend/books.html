@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Books — Librix</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/tables.css">
+<link rel="stylesheet" href="css/forms.css">
+<link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/glass.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <script src="js/theme.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <nav class="sidebar" id="sidebar-mount"></nav>
+  <div class="main-area">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="datetime-chip" id="topbar-clock"></div>
+        <div>
+          <div class="page-title">Books</div>
+          <div class="page-subtitle">Catalog management — CRUD backed by SQLite via Python</div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <button class="btn-icon" id="logout-btn" title="Log out">⏻</button>
+        <div class="user-chip" id="user-chip"></div>
+      </div>
+    </header>
+    <main class="content">
+      <div class="glass-panel">
+        <div class="section-header">
+          <h2>📚 Book Catalog</h2>
+          <div class="section-actions">
+            <button class="btn btn-primary" id="add-book-btn">+ Add Book</button>
+            <button class="btn" id="export-books-btn">⬇ Export CSV</button>
+          </div>
+        </div>
+        <div class="table-toolbar">
+          <div class="search-box">🔎<input type="text" id="book-search" placeholder="Search by title, author, ISBN…"></div>
+          <select class="filter-select" id="book-status-filter">
+            <option value="">All Statuses</option>
+            <option value="Available">Available</option>
+            <option value="Unavailable">Unavailable</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+        <div class="table-wrap glass">
+          <div class="table-scroll">
+            <table class="data-table" id="books-table">
+              <thead>
+                <tr>
+                  <th data-key="title">Title</th>
+                  <th data-key="author">Author</th>
+                  <th data-key="category">Category</th>
+                  <th data-key="isbn">ISBN</th>
+                  <th data-key="quantity">Qty</th>
+                  <th data-key="available_qty">Available</th>
+                  <th data-key="shelf_location">Shelf</th>
+                  <th data-key="status">Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="books-tbody"><tr><td colspan="9" class="empty-state">Loading…</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="pagination" id="books-pagination"></div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/transitions.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/books.js"></script>
+</body>
+</html>
