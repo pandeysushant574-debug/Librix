@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings — Librix</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/tables.css">
+<link rel="stylesheet" href="css/forms.css">
+<link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/glass.css" />
+<link rel="stylesheet" href="css/theme.css" />
+<script src="js/theme.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <nav class="sidebar" id="sidebar-mount"></nav>
+  <div class="main-area">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="datetime-chip" id="topbar-clock"></div>
+        <div><div class="page-title">Settings</div><div class="page-subtitle">Appearance &amp; personalisation</div></div>
+      </div>
+      <div class="topbar-right">
+        <button class="btn-icon" id="logout-btn" title="Log out">⏻</button>
+        <div class="user-chip" id="user-chip"></div>
+      </div>
+    </header>
+    <main class="content">
+      <div class="set-grid">
+
+        <div class="glass-panel">
+          <div class="section-header"><h2>🎛️ Display</h2></div>
+
+          <div class="set-row">
+            <div class="set-text">
+              <div class="set-title">Glass effect</div>
+              <div class="set-desc">Frosted, blurred, see-through surfaces with floating light. Turn it off for flat, solid panels (also lighter on slow devices).</div>
+            </div>
+            <div class="toggle-switch" id="glass-toggle" role="switch" tabindex="0" aria-label="Glass effect"><div class="knob"></div></div>
+          </div>
+
+          <div class="set-row">
+            <div class="set-text">
+              <div class="set-title">Light / Night mode</div>
+              <div class="set-desc">Switch between the light look and a dark night theme.</div>
+            </div>
+            <div class="seg" id="mode-seg" role="group" aria-label="Colour mode">
+              <button type="button" data-mode="light">☀️ Light</button>
+              <button type="button" data-mode="dark">🌙 Night</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-panel">
+          <div class="section-header"><h2>🎨 UI Colour</h2></div>
+          <div class="set-desc" style="font-size:13px;">Pick a preset or choose any colour. It recolours the background, sidebar, buttons and highlights across the whole app, in both light and night mode.</div>
+          <div class="swatches" id="swatches"></div>
+          <div class="custom-color">
+            <label for="custom-color-input" style="font-weight:700;font-size:13.5px;">Custom colour</label>
+            <input type="color" id="custom-color-input" value="#2563eb">
+            <span class="hex" id="custom-hex">—</span>
+          </div>
+          <div class="set-preview">
+            <span style="font-size:12.5px;font-weight:700;">Preview:</span>
+            <button class="btn btn-primary btn-sm" type="button">Primary</button>
+            <button class="btn btn-sm" type="button">Secondary</button>
+            <span class="badge badge-blue">Badge</span>
+            <div class="progress-track" style="width:160px;margin:0;"><div class="progress-fill" style="width:65%"></div></div>
+          </div>
+        </div>
+
+        <div class="set-actions">
+          <button class="btn btn-warning" id="reset-btn" type="button">↺ Reset to defaults</button>
+        </div>
+        <div class="set-desc" style="font-size:12.5px;">Settings are saved in this browser and apply instantly on every page, including the login screen.</div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/transitions.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/settings.js"></script>
+</body>
+</html>
