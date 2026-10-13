@@ -1,0 +1,38 @@
+/* ============================================================
+   Responsive adjustments
+   ============================================================ */
+
+@media (max-width: 900px) {
+  :root { --sidebar-w: 78px; }
+  .brand span:not(.l1) { display: none; }
+  .nav-item span.label { display: none; }
+  .nav-label { display: none; }
+  .nav-item { justify-content: center; }
+  .main-area { padding: 0 16px 26px; }
+  .topbar { padding: 20px 0 0; }
+}
+
+@media (max-width: 640px) {
+  .app-shell { flex-direction: column; }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px;
+  }
+  .brand { display: none; }
+  .nav-group { display: flex; margin: 0; }
+  .nav-label { display: none; }
+  .sidebar-footer { display: none; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .quality-cards { grid-template-columns: 1fr; }
+  .topbar { height: auto; padding: 14px 0 0; flex-direction: column; align-items: flex-start; }
+  .form-grid { grid-template-columns: 1fr; }
+  .span-2 { grid-column: span 1; }
+}
+
+@media (max-width: 420px) {
+  .kpi-grid { grid-template-columns: 1fr; }
+}
