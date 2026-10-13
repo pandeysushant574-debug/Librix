@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reports — Librix</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/tables.css">
+<link rel="stylesheet" href="css/forms.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/glass.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <script src="js/theme.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <nav class="sidebar" id="sidebar-mount"></nav>
+  <div class="main-area">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="datetime-chip" id="topbar-clock"></div>
+        <div><div class="page-title">Reports</div><div class="page-subtitle">Analytics pulled live from SQL — Library, Issues, Fines, Testing, Bugs</div></div>
+      </div>
+      <div class="topbar-right">
+        <button class="btn-icon" id="logout-btn" title="Log out">⏻</button>
+        <div class="user-chip" id="user-chip"></div>
+      </div>
+    </header>
+    <main class="content">
+      <div class="table-toolbar">
+        <select class="filter-select" id="report-picker">
+          <option value="library">Library Report</option>
+          <option value="issues">Issue Report</option>
+          <option value="fines">Fine Report</option>
+          <option value="testing">Testing Report</option>
+          <option value="bugs">Bug Report</option>
+          <option value="system-logs">System Log Report</option>
+        </select>
+        <button class="btn" id="export-report-btn">⬇ Export CSV</button>
+      </div>
+
+      <div id="report-kpis" class="kpi-grid" style="display:none;"></div>
+
+      <div class="glass-panel">
+        <div class="table-wrap glass">
+          <div class="table-scroll">
+            <table class="data-table" id="report-table">
+              <thead id="report-thead"></thead>
+              <tbody id="report-tbody"><tr><td class="empty-state">Loading…</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/transitions.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/reports.js"></script>
+</body>
+</html>
