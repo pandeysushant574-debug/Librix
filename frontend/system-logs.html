@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Logs — Librix</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/tables.css">
+<link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/glass.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <script src="js/theme.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <nav class="sidebar" id="sidebar-mount"></nav>
+  <div class="main-area">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="datetime-chip" id="topbar-clock"></div>
+        <div><div class="page-title">System Logs</div><div class="page-subtitle">Automatic activity &amp; audit trail</div></div>
+      </div>
+      <div class="topbar-right">
+        <button class="btn-icon" id="logout-btn" title="Log out">⏻</button>
+        <div class="user-chip" id="user-chip"></div>
+      </div>
+    </header>
+    <main class="content">
+      <div class="kpi-grid" id="log-counters"></div>
+
+      <div class="glass-panel">
+        <div class="section-header">
+          <h2>🗒️ System Logs</h2>
+          <div class="section-actions">
+            <button class="btn" id="view-audit-btn">📜 View Audit Logs</button>
+          </div>
+        </div>
+        <div class="table-toolbar">
+          <div class="search-box">🔎<input type="text" id="log-search" placeholder="Search message or action…"></div>
+          <select class="filter-select" id="log-level-filter">
+            <option value="">All Levels</option>
+            <option>INFO</option><option>WARNING</option><option>ERROR</option><option>DEBUG</option>
+          </select>
+        </div>
+        <div class="table-wrap glass">
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Time</th><th>Level</th><th>Module</th><th>Action</th><th>User</th><th>Message</th><th>Result</th></tr></thead>
+              <tbody id="logs-tbody"><tr><td colspan="7" class="empty-state">Loading…</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/transitions.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/system-logs.js"></script>
+</body>
+</html>
