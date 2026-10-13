@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Issue / Return — Librix</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/tables.css">
+<link rel="stylesheet" href="css/forms.css">
+<link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/glass.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <script src="js/theme.js"></script>
+<style>
+  .checkinout-toggle { display:flex; align-items:center; gap:14px; padding:10px 18px; }
+  .checkinout-toggle .lbl { font-weight:700; letter-spacing:0.5px; font-size:13px; opacity:0.7; }
+  .checkinout-toggle .lbl.active { opacity:1; color:#6ee7b7; }
+  .issue-grid { display:grid; grid-template-columns: 1.4fr 1fr; gap:18px; }
+  @media (max-width: 900px) { .issue-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="app-shell">
+  <nav class="sidebar" id="sidebar-mount"></nav>
+  <div class="main-area">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="datetime-chip" id="topbar-clock"></div>
+        <div><div class="page-title">Check-in / Check-out</div><div class="page-subtitle">Issue and return books — fully transactional (Q16 §8)</div></div>
+      </div>
+      <div class="topbar-right">
+        <div class="checkinout-toggle glass">
+          <span class="lbl active" id="lbl-checkin">CHECK-OUT (ISSUE)</span>
+          <div class="toggle-switch on" id="mode-toggle"><div class="knob"></div></div>
+          <span class="lbl" id="lbl-checkout">CHECK-IN (RETURN)</span>
+        </div>
+        <button class="btn-icon" id="logout-btn" title="Log out">⏻</button>
+        <div class="user-chip" id="user-chip"></div>
+      </div>
+    </header>
+    <main class="content">
+      <div class="issue-grid">
+        <div class="glass-panel">
+          <div id="issue-panel">
+            <div class="section-header"><h2>📥 Issue a Book</h2></div>
+            <form id="issue-form">
+              <div class="form-grid">
+                <div class="field"><label>Member <span class="req">*</span></label>
+                  <select id="i-member" required></select></div>
+                <div class="field"><label>Book <span class="req">*</span></label>
+                  <select id="i-book" required></select></div>
+                <div class="field"><label>Quantity</label><input type="number" id="i-qty" value="1" min="1"></div>
+                <div class="field"><label>Issue Date <span class="req">*</span></label><input type="date" id="i-issue-date" required></div>
+                <div class="field span-2"><label>Due Date <span class="req">*</span></label><input type="date" id="i-due-date" required></div>
+              </div>
+              <div id="issue-form-error" class="field-error"></div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Submit — Issue Book</button>
+              </div>
+            </form>
+          </div>
+
+          <div id="return-panel" style="display:none;">
+            <div class="section-header"><h2>📤 Return a Book</h2></div>
+            <form id="return-form">
+              <div class="form-grid">
+                <div class="field span-2"><label>Active Issue <span class="req">*</span></label>
+                  <select id="r-issue" required></select></div>
+                <div class="field"><label>Return Date <span class="req">*</span></label><input type="date" id="r-return-date" required></div>
+                <div class="field"><label>Condition</label>
+                  <select id="r-condition"><option>Good</option><option>Damaged</option><option>Lost</option></select></div>
+                <div class="field span-2"><label>Book Condition / Remarks</label>
+                  <textarea id="r-remarks" placeholder="Please mention the book condition, damages (if any)…"></textarea></div>
+              </div>
+              <div id="return-form-error" class="field-error"></div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Submit — Return Book</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="glass-panel">
+          <div class="section-header"><h2>📋 Currently Issued</h2></div>
+          <div class="recent-list" id="active-issues-list"><div class="empty-state">Loading…</div></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/transitions.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/issue-return.js"></script>
+</body>
+</html>
