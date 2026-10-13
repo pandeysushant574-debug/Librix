@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quality Overview — Librix</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/glass.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <script src="js/theme.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <nav class="sidebar" id="sidebar-mount"></nav>
+  <div class="main-area">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="datetime-chip" id="topbar-clock"></div>
+        <div><div class="page-title">Quality Overview</div><div class="page-subtitle">Q16 — Improve Testing</div></div>
+      </div>
+      <div class="topbar-right">
+        <button class="btn-icon" id="logout-btn" title="Log out">⏻</button>
+        <div class="user-chip" id="user-chip"></div>
+      </div>
+    </header>
+    <main class="content">
+      <div class="glass-panel quality-hero">
+        <h1>Q16 — IMPROVE TESTING</h1>
+        <p>Measure defects, verify behavior, trace failures, and continuously improve.</p>
+      </div>
+
+      <div class="quality-cards" id="quality-cards"></div>
+
+      <div class="glass-panel">
+        <div class="section-header"><h2>🔁 Q16 Quality Improvement Loop</h2></div>
+        <div class="loop-diagram">
+          <div class="loop-step glass"><div class="ls-title" style="color:#93c5fd;">PLAN</div><ul>
+            <li>Define test cases</li><li>Define input limits</li><li>Identify risks</li></ul></div>
+          <div class="loop-step glass"><div class="ls-title" style="color:#6ee7b7;">DO</div><ul>
+            <li>Run tests</li><li>Run boundary tests</li></ul></div>
+          <div class="loop-step glass"><div class="ls-title" style="color:#fcd34d;">CHECK</div><ul>
+            <li>Analyze failures</li><li>Review bug matrix</li><li>Review system logs</li></ul></div>
+          <div class="loop-step glass"><div class="ls-title" style="color:#fca5a5;">ACT</div><ul>
+            <li>Fix defect</li><li>Retest</li><li>Close bug</li></ul></div>
+          <div class="loop-step glass"><div class="ls-title" style="color:#c4b5fd;">IMPROVE</div><ul>
+            <li>Update test cases</li><li>Strengthen validation</li><li>Prevent recurrence</li></ul></div>
+        </div>
+      </div>
+
+      <div class="dashboard-grid" style="margin-top:18px;">
+        <div class="glass-panel">
+          <div class="section-header"><h2>🧪 Unit Test Cases</h2><a class="btn btn-sm" href="unit-tests.html">Open →</a></div>
+          <p style="color:var(--text-secondary);font-size:13px;">Execute real backend Python logic for UT001–UT012 and store results in <code>test_results</code>.</p>
+        </div>
+        <div class="glass-panel">
+          <div class="section-header"><h2>🐞 Bug Log Matrix</h2><a class="btn btn-sm" href="bug-matrix.html">Open →</a></div>
+          <p style="color:var(--text-secondary);font-size:13px;">Track defects through Open → In Progress → Fixed → Retest → Closed.</p>
+        </div>
+        <div class="glass-panel">
+          <div class="section-header"><h2>📐 Input Bounds Testing</h2><a class="btn btn-sm" href="input-bounds.html">Open →</a></div>
+          <p style="color:var(--text-secondary);font-size:13px;">Run boundary-value checks against quantity, fine, title, member code and date fields.</p>
+        </div>
+        <div class="glass-panel">
+          <div class="section-header"><h2>🗒️ System Logs</h2><a class="btn btn-sm" href="system-logs.html">Open →</a></div>
+          <p style="color:var(--text-secondary);font-size:13px;">Every action across the app is automatically logged for traceability.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/transitions.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/quality.js"></script>
+</body>
+</html>
