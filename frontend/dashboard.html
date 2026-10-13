@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Librix</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/tables.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/forms.css">
+<link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/glass.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <script src="js/theme.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <nav class="sidebar" id="sidebar-mount"></nav>
+  <div class="main-area">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="datetime-chip" id="topbar-clock"></div>
+        <div>
+          <div class="page-title">Dashboard</div>
+          <div class="page-subtitle">Live overview of books, members, testing and system health</div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <button class="btn-icon" id="logout-btn" title="Log out">⏻</button>
+        <div class="user-chip" id="user-chip"></div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="kpi-grid" id="library-kpis"></div>
+
+      <div class="dashboard-grid">
+        <div>
+          <div class="glass-panel" style="margin-bottom:18px;">
+            <div class="section-header"><h2>🧪 Testing Snapshot</h2></div>
+            <div class="kpi-grid" id="testing-kpis"></div>
+          </div>
+          <div class="glass-panel">
+            <div class="section-header"><h2>🐞 Bugs Snapshot</h2></div>
+            <div class="kpi-grid" id="bugs-kpis"></div>
+          </div>
+        </div>
+        <div class="glass-panel">
+          <div class="section-header"><h2>🗒️ System</h2></div>
+          <div class="kpi-grid" id="system-kpis" style="grid-template-columns:1fr;"></div>
+          <div class="section-header" style="margin-top:18px;"><h2>Recent Activity</h2></div>
+          <div class="recent-list" id="recent-issues"></div>
+        </div>
+      </div>
+
+      <div class="dashboard-grid" style="margin-top:18px;">
+        <div class="glass-panel">
+          <div class="section-header"><h2>❌ Recent Failed Tests</h2></div>
+          <div class="recent-list" id="recent-failed-tests"></div>
+        </div>
+        <div class="glass-panel">
+          <div class="section-header"><h2>🐞 Recent Bugs</h2></div>
+          <div class="recent-list" id="recent-bugs"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/transitions.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
